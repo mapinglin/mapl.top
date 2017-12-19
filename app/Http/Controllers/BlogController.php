@@ -87,4 +87,8 @@ class BlogController extends Controller {
         Log::info(Auth()->user()->name.'成功登录到系统');
         Event::fire(new sendMessage($blog));
     }
+
+    public function testGit(){
+        
+    }
 }
