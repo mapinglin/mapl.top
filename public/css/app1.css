@@ -1,0 +1,57 @@
+/*.widget-title ul li{*/
+    /*float: left;*/
+    /*padding-left: 20px;*/
+/*}*/
+/*.widget-title a{*/
+    /*font-size: 15px;*/
+    /*color: red;*/
+    /*font-weight: 600;*/
+/*}*/
+/*.widget-body div{*/
+    /*display: inline;*/
+    /*padding-left: 100px;*/
+    /*text-align: justify;*/
+/*}*/
+
+.dd-item-add{
+
+    display: block;
+    position: relative;
+    cursor: pointer;
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 10px 0px;
+    padding-left: 0;
+    /*text-indent: 100%;*/
+    white-space: nowrap;
+    overflow: hidden;
+    border: 0;
+    background: transparent;
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.dd-handle{
+    display: block;
+    margin: 1px 0;
+    padding: 8px 10px;
+     color: #333;
+     text-decoration: none;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.help-block{
+    color: red;
+}
+
+.am-fr .pagination li{
+    float: left;
+    width: 25px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
