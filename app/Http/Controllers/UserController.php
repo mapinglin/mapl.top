@@ -7,10 +7,14 @@
  */
 
 namespace App\Http\Controllers;
+use App\Events\sendMessage;
+use App\Jobs\SendEmail;
 use App\Role;
 use App\User;
+use Encore\Admin\Form\Field\Email;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use League\Flysystem\Exception;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -78,5 +82,20 @@ class UserController extends Controller{
                 $sheet->rows($newArray);
             });
         })->export('xls');
+    }
+
+    //测试队列 发送邮件
+    public function testQueue(){
+//        Mail::send('email',['data'=>'测试用户通过队列发送邮件！！！'],function($message){
+//            $to = User::find(1)->email;
+//            $message->to($to)->subject('测试队列');
+//        });
+        //仅仅只是把任务加到队列中
+        dispatch(new SendEmail(User::find(1)));
+        return 'dd';
+    }
+
+    public function testPay(){
+        return view('testpay');
     }
 }

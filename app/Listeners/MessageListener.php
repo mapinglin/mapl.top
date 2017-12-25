@@ -29,5 +29,10 @@ class MessageListener
     {
         $blog =  $sendMessage->blog;
         Log::info('事件触发成功',$blog->toArray());
+        //return false;
+    }
+
+    public function git(){
+
     }
 }

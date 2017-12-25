@@ -51,3 +51,6 @@ Route::get('/error',function(){
 });
 
 Route::get('/test','BlogController@getBlog');
+
+Route::get('/testqueue','UserController@testQueue');
+Route::get('/testpay','UserController@testPay');
