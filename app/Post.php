@@ -17,4 +17,13 @@ class Post extends Model{
         return $this->belongsTo('App\Blog');
     }
 
+
+    public function getBlog(){
+
+    }
+
+    public function getFuck(){
+        
+    }
+
 }
