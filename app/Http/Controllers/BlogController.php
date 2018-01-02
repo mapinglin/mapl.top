@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 use App\Blog;
+use App\Events\CrudLogEvent;
 use App\Events\sendMessage;
 use App\Post;
 use App\Tag;
@@ -19,6 +20,7 @@ use Intervention\Image\Facades\Image;
 
 class BlogController extends Controller {
     public function index(){
+        Event::fire(new CrudLogEvent(Auth()->user(),'index'));
         $blog = Blog::paginate(15);
         return view('blog.index',compact('blog'));
     }
@@ -29,8 +31,6 @@ class BlogController extends Controller {
     }
 
     public function upload(Request $request){
-//        var_dump($_FILES['file']['tmp_name']);
-//        exit;
         $file = $request->file('file');
         if($file->isValid()){
 //            $originalName = $file->getClientOriginalName(); // 文件原名

@@ -16,6 +16,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\sendMessage' => [
             'App\Listeners\MessageListener',
         ],
+        'App\Events\CrudLogEvent'=>[
+            'App\Listeners\CrudLogListener',
+        ],
     ];
 
     /**

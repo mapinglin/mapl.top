@@ -18,8 +18,6 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         $menu = new Menu();
         $menus = $menu->getMenu();
-//        var_dump($menus);
-//        exit;
         view()->share('menus',$menus);
     }
 
