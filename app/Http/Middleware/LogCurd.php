@@ -19,13 +19,7 @@ class LogCurd
     public function handle($request, Closure $next)
     {
         $response = $next($request);
-       // $method = $request->method();
-        //var_dump($method);
-       // exit;
-        $user = Auth()->user();
-//        var_dump($user);
-//        exit;
-        Event::fire(new CrudLogEvent($user));
+
         return $response;
     }
 }

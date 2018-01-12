@@ -7,7 +7,12 @@
  */
 
 namespace App;
+use Illuminate\Support\Facades\Log;
+
 class Model extends \Illuminate\Database\Eloquent\Model{
+
+
+
     public function delete()
     {
 
@@ -15,7 +20,7 @@ class Model extends \Illuminate\Database\Eloquent\Model{
 
     public function update(array $attributes = [], array $options = [])
     {
-
+        Log::info('good','idea');
     }
 
     public function create(){
